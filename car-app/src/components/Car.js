@@ -1,5 +1,11 @@
 import React from "react";
+import Speed from "./Speed";
 
 export default function Car() {
-    return <div className="car">Make your instrument cluster here</div>;
+    return (
+        <div className="car">
+            {" "}
+            <Speed />
+        </div>
+    );
 }
