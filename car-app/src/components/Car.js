@@ -1,11 +1,17 @@
 import React from "react";
-import Speed from "./Speed";
+import ReactSpeedometer from "react-d3-speedometer";
+import Button from "react-bootstrap/Button";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function Car() {
+export default function Car({ state, dispatch }) {
     return (
         <div className="car">
-            {" "}
-            <Speed />
+            {state.isSwitchedOn && <ReactSpeedometer />}
+            <Button onClick={() => dispatch({ type: "switchOn/Off" })}>
+                {state.isSwitchedOn ? "Ausschhalten" : "Anschalten"}
+            </Button>
+            <Button>Gas geben</Button>
+            <Button>bremsen</Button>
         </div>
     );
 }
